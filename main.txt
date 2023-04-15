@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+void main()
+{
+    const char* StringPath = "PATH";
+    char* p;
+    int stat, pid;
+    p = getenv(StringPath);
+    while ((p = strtok(StringPath, ":")) != NULL)
+    {
+        if (p == "leave")
+        {
+            exit(1);
+        }
+        else
+        {
+            if (0 == (pid = fork()))
+            {
+                execv(p);
+            }
+            else
+            {
+                wait(&stat);
+            }
+        }
+    }
+    exit(1);
+}
