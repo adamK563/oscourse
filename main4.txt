@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <wait.h>
+#include <errno.h>
+
+
+int main(int argc, char * argv[])
+{
+    while(1)
+    {
+        char buf[1000];
+        printf(">>>");
+        fflush(stdout);
+        fgets(buf, 1000, stdin);
+        buf[strlen(buf)-1] = 0;
+
+        if(0 == strcmp(buf, "leave"))
+            break;
+
+        if(!(fork()))
+        {
+            char command[2000];
+            char cwd[1000];
+            char * argv[2];
+            char * path = getenv("PATH");
+            argv[0] = buf;
+            argv[1] = NULL;
+
+            for(cwd = strtok(path, ":"); cwd != NULL; cwd = strtok(NULL, ":"))
+            {
+                //sprintf(command, %s/%s, getcwd(cwd, 1000), buf);
+                sprintf(command, %s/%s, cwd, buf);
+                printf("running %s ... \n", command);
+                execv(command, argv);
+                perror("Error:");
+            }
+
+            printf("command not recognized\n");
+            exit(1);
+
+        else
+        {
+            int status;
+            wait(&status);
+        }
+    }
+
+    return(0);
+}
