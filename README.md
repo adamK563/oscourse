@@ -4,50 +4,50 @@ This repository contains my preparation materials for the "Operating Systems" ex
 
 ## Study Plan
 
-- Week 1:
+## - Week 1:
 #### What an OS
 #### OS kernel,
 #### Categories of OSes.
 
-- Week 2:
+## - Week 2:
 ####  Storage
 #### Interrupts
 
-- Week 3:
+## - Week 3:
 #### The Process Concept, Process states, 
 #### PCB,
 #### Scheduling
 #### Context Switches.
 
-- Week 4:
+## - Week 4:
 #### Process Communication, Threads.
 
-- Week 5:
+## - Week 5:
 #### CPU bursts, I/O Burst Phases 
 #### Scheduling Criteria
 #### Scheduling Algorithms.
 
-- Week 6:
+## - Week 6:
 #### Priority,
 #### Multi-Level Scheduling
 #### Distributed System Scheduling.
 
-- Week 7:
+## - Week 7:
 ####  Critical Sections
 #### Dijstra Algorithms and the Bakery Algorithm.
 
-- Week 8:
+## - Week 8:
 ####  Hardware based Scheduling
 #### Semaphores
 #### Classic Scheduling Problems
 #### Deadlocks.
 
-- Week 9:
+## - Week 9:
 #### Addressing
 #### Memory Allocation
 #### Fragmentation.
 
-- Week 10:
+## - Week 10:
 ####  Paging
 #### Segmentation
 #### Virtual Memory
@@ -55,19 +55,19 @@ This repository contains my preparation materials for the "Operating Systems" ex
 #### Page replacement Algorithms
 #### Thrashing.
 
-- Week 11:
+## - Week 11:
 #### File Structure,
 #### File Systems
 #### Directories
 #### File Allocation.
 
-- Week 12:
+## - Week 12:
 ####  Vacant Space Management
 #### Log Files
 #### File Recovering
 #### Distributed File Systems.
 
-- Week 13:
+## - Week 13:
 #### Disk Scheduling
 #### Disk Data Management
 #### RAID.
