@@ -3,6 +3,7 @@
 This repository contains my preparation materials for the "Operating Systems" exam. The exam covers various topics related to operating systems, including process management, memory management, file systems, and synchronization.
 
 ## Study Plan
+## - Week 0:
 ## הקדמה:
 
 ### רכבי מערכת מחשב:
@@ -113,6 +114,30 @@ The kernel is a computer program at the core of a computer's operating system an
 - לכל בקר יש buffer פנימי
 - בקר מעדכן את המעבד על שינוי באמצאות פסיקה
 
+### פסיקה:
+לאחר קבל פסיקה המעבד מריץ (Interrupt service routine) ISR
+
+שה ISR זה פונקציה לטיפול פסיקות.
+פיסקה בנוי מ8 ביטים וגם כך המעבד יודע לזעות מאיזה סוג הפיסקה (לפי ה8 ביטים)
+
+ה Interupt Vector - מכיל את כל הפסאות האפשריות שיש למערכת הפעלה בסדר לפי 8 הביטים
+הוקטור שמור בRAM המחשב, והמ"ע כותבת את התוכן של הפסיקה
+
+פסיקה - interrupt - סיגנל למ"ע להתיחס - שני סוגים של פסיקות:
+- 1. פיסקת תוכנה - TRAP
+- 2. פסירת חומרה - פשוט INTERRUPT
+
+### Device status tabel:
+Device-status table contains entry for each I/O device indicating its type, address, and state.
+Operating system indexes into I/O device table to determine device status and to modify table entry to include interrupt.
+
+### DMA - Direct Memory Access
+מנגנון אשר מונע את המצב שהמעבד מחכה יוצר נדי (שכל המידע יגיע בשלמות ואז יועבר לזיכרון)
+יתרונות המנגנון:
+- פחות פסיקות 
+- חיסכון בזמן מכיוון שהדרייבר לא מדבר ישירות עם הבקר אלה הבקר רושם ישר לזיכרון
+חיסרונות:
+- עוד רכיב חומרה פיזי (אפשר להגיד עלות)
 
 ## - Week 3:
 #### The Process Concept, Process states, 
