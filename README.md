@@ -3,12 +3,56 @@
 This repository contains my preparation materials for the "Operating Systems" exam. The exam covers various topics related to operating systems, including process management, memory management, file systems, and synchronization.
 
 ## Study Plan
+## הקדמה:
 
+### רכבי מערכת מחשב:
+1. חומרה - מעבד, זיכרון, בתקני קלט פלט
+2. מערכת הפעלה - מ"ע 
+3. תוכנית משתמש - קומפיילר, סביבת פיתוח וכו'
+4. משתמשים - USER - בני אדם ומחשבים אחרים
 ## - Week 1:
 #### What an OS
-#### OS kernel,
-#### Categories of OSes.
+An operating system (OS) is system software that manages computer hardware and software resources.
 
+### תפקידי מ"ע:
+1. קובעת מתי ואיך תרוץ תוכנית
+2. מנהלת התקני קלט פלט
+3. גרעין OS Kernel התוכנית הראשית של מ"ע
+
+#### OS kernel
+The kernel is a computer program at the core of a computer's operating system and generally has complete control over everything in the system.
+
+### תפקידי בגרעין:
+1. אחראי על התזמון של תהליכים
+2. אחראי על טיפול בקשות (הפעלה של התקן חומרה)
+- יש מגבלת זמן לכל תוכנית.
+- פסיקה - interrupt - סיגנל למ"ע להתיחס
+- 1. פיסקת תוכנה - TRAP
+- 2. פסירת חומרה - פשוט INTERRUPT 
+
+### מה צריך להיות במ"ע:
+1. מ"ע צריך לדעת לתקשר עם התקני חומרה (DEVICE DRIVER) 
+2. ניהול זכרון - הקצעת זיכרון באופן יעיל
+3. תזמון - בעזרת ה scheduler (המתזמן) מתי כל תכנית תרוץ
+4. מקום בדיסק בשם Spool, הספול שומר תהליכים איטים לרכיבי חומרה איטים spooling
+
+
+#### Categories of OSes:
+
+### Time sharing systems:
+מחשבים של פעם - תוכניות לא רצות במקביל באופן רציף - כלומר מתבצעת החלפה מהירה בין התוכניות על אותו מעבד 
+### Multiprogramming systems:
+- מ"ע יודעת להריץ כמה תוכניות "במקביל" (למדויק אבל כך זה מרגיש)
+- לא נרגיש כל פעם רצה תוכנית אחרת אלא הכל פועל פעופן מקביל ורציף
+
+### Parallel systems: - מערכות מסוג עיבוד מקבילי
+#### סוגים של עיבוד מקבילי:
+1. עיבוד מקבילי סמטרי - SMP - כל המעבדים שווי מעמד אין master (מחשבים רגילים)
+2. עיבוד מקבילי אי סמטרי - קיים מעבד master אשר שולט משאר (מחשב על)
+- Time sharing systems
+- Tightly coupled systems
+-
+ 
 ## - Week 2:
 ####  Storage
 #### Interrupts
@@ -66,11 +110,6 @@ This repository contains my preparation materials for the "Operating Systems" ex
 #### Log Files
 #### File Recovering
 #### Distributed File Systems.
-
-## - Week 13:
-#### Disk Scheduling
-#### Disk Data Management
-#### RAID.
 
 ## Contributing
 
