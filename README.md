@@ -6,7 +6,7 @@ This repository contains my preparation materials for the "Operating Systems" ex
 ## הקדמה:
 
 ### רכבי מערכת מחשב:
-1. חומרה - מעבד, זיכרון, בתקני קלט פלט
+1. חומרה - מעבד, זיכרון, התקני קלט פלט
 2. מערכת הפעלה - מ"ע 
 3. תוכנית משתמש - קומפיילר, סביבת פיתוח וכו'
 4. משתמשים - USER - בני אדם ומחשבים אחרים
@@ -45,14 +45,33 @@ The kernel is a computer program at the core of a computer's operating system an
 - מ"ע יודעת להריץ כמה תוכניות "במקביל" (למדויק אבל כך זה מרגיש)
 - לא נרגיש כל פעם רצה תוכנית אחרת אלא הכל פועל פעופן מקביל ורציף
 
-### Parallel systems: - מערכות מסוג עיבוד מקבילי
-#### סוגים של עיבוד מקבילי:
+
+#### Parallel systems: - מערכות מסוג עיבוד מקבילי
+### סוגים של עיבוד מקבילי:
 1. עיבוד מקבילי סמטרי - SMP - כל המעבדים שווי מעמד אין master (מחשבים רגילים)
 2. עיבוד מקבילי אי סמטרי - קיים מעבד master אשר שולט משאר (מחשב על)
-- Time sharing systems
-- Tightly coupled systems
--
+
+- Time sharing systems are Parallel systems
+- Multiprogramming systems are Parallel systems
+
+- Tightly coupled systems - חולקות זיכרון ושעון, תפוקה גבוה(*)
+
+תפוקה - troughput
+- Loosly coupled system - in Distributed systems a computer runs it
+מערכת מבוזרת - Distrebuted system - מערכת של כמה מחשבים 
+שיתוף משאבים
+תפוקה
+אמינות - עם מחשב אחד נופל המערכת ממשיכה לפעול
+
+- Real-time systems
+ ### סוגים של מערכות זמן אמת:
+ 1. Hard real-time systems: 
+ A hard real-time system has absolute deadlines, and if those allotted time spans are missed, a system failure will occur.
+ example: Iron Dome (97%+ success rate)
  
+ 2. Soft real-time systems, the system continues to function even if missing a deadline, but with undesirable lower quality of output.
+ example: Smart fridge (We say thank if somehting smart happens)
+
 ## - Week 2:
 ####  Storage
 #### Interrupts
