@@ -140,6 +140,7 @@ Operating system indexes into I/O device table to determine device status and to
 - עוד רכיב חומרה פיזי (אפשר להגיד עלות)
 
 מצגת 3 צריכה להכנס פה איפשהשנו
+## - Week 3:
 #### The Process Concept
 - כל TASK או JOB נקראה תהליך PROCESS
 - תהליך זה - זואי תוכנה שרצה
@@ -191,16 +192,64 @@ waiting - במהלך הקוד של התהליך יש איזהשהיא אשיה �
     7. ה Accounting info - כמה זמן ריצה התהליך קיבל בכללי
     8. ה I\O info - באיזה קבצים השתמש התהליך
 
-סוף מצגת 4 להכנס פה
 
 #### Scheduling
-### מצזמן:
+### תורי תזמון תהליכים:
+- במ"ע תהליכים שמורים ברשימה מקושרת
+- רשימה מקושרת אחת לכל תהליך
+- רשימה מקושרת אחת לכל התקן חומרה - Device status tabel  
+- וגם קיים שםIO device queue לרשימה של התקן חומרה
+- וגם קיים שם ready queue לתהליכים שמוכנים לקוץ
+- תהליכים נוגגים בין תורים אלו
+
+קיימים שני סוגים של תהליכים:
+1. I\O bound process - תהליך שזקוק להתקן חומרה ולכן נמצא הרבה במצב WAITING
+2. CPU-Bound process - תהליך שזקוק לקריאות מעבד
+
+קיימים עוד שני סוגים של תהליכים: 
+1. Independent process - תהליך זה לא מושע או מפשיע על אחרים
+2. Cooperating process - תהליך זה מושפע ומשפיע
+### מתזמן:
 - שני סוגי מתזמן:
     1. טווח ארוך - long-term scheduler
     2. טווח קצר - short-term scheduler
+
+- מתזמן טווח קצר הרבה יותר מהיר וקובע כל כמה מילישניות איזה תהליך רץ
+- מתמן טווח ארוך הרבה יותא איטי וקובע כל כמה שניות, לכן קוראים לו בתדירות נמוך יותר
+
+
+
 #### Context Switches.
+ - A context switch can occur as the result of an interrupt, such as when a task needs to access disk storage, freeing up CPU time for other proccess. Some operating systems also require a context switch to move between user mode and kernel mode procceses. 
+ - החלפה לתהליך אחר ע"י CPU דורשת שמירת המצב הקיים של התהליך הישן והתחול התהליח החדש.
+ - פעולה זאת נקראת context switch
+ - תהליך רץ ב user mode ברגע פסיקה עובר ל kernel mode
+ - מ"ע מעלה את ה PCB ומחזירה ל- user mode
+ - פעולה זאת גורמת ל overhead ומ"ע לא עובדת בזמן זה
+ - כמות הזמן שמ"ע לעובדת תלוי בחומרה
+
 ## - Week 4:
-#### Process Communication, Threads.
+#### Process Communication:
+### מנגנונים להעברת מידע בין תהליכים:
+1. Producer - consumer - shared memory
+   -  מ"ע מאפשרת לשני תהליכים לתקשר דרך יצירת תור
+   -  To allow producer and consumer processes to run concurrently, we must have available a buffer of items that can be filled by the producer and emptied by the consumer.
+   -  מ"ע מעבירה תהליכים ממצב running למצב waiting כדי לפנות מקום בתור
+   -  הפתרון יכול למלא רק N-1 איברים
+   -  בנוסף הוא מבצע busy waiting
+2. תקשורת ישרה - תקשורת בין שני תהליכים באמצעות הודעות
+3. תקשורת שאינה ישירה - תקשרות באמצאות משאב אחר לדוגמע PIPE, תומך בתקשורת בין הרבה תהליכים
+4. סינכרוניזציה - blocking and non-blocking
+blocking is like tcp awating for the whole messege to pass before passing on 
+non-blocking is like udp just sends messeges and could care less about whats up with them ;)
+
+### שיטת העברת הודעות באמצעות buffering:
+עובדת עם תור של הודעות
+1. מקסימום 0 הודעות כלומר אין buffer ששומר הודעותף, השולח מכחה שהמקבל יקרא ב שיטת ה blocking וזאת שיטת ה - Zero capacity
+2. מקסימום n הודעות בתור, כשאר התור מלא השולח מחקה שהתור התרוקן - Bounded capacity
+3. התור אינסופי, לא נדרש לחקות - Unbounded capacity 
+
+
 
 ## - Week 5:
 #### CPU bursts, I/O Burst Phases 
@@ -213,7 +262,7 @@ waiting - במהלך הקוד של התהליך יש איזהשהיא אשיה �
 #### Distributed System Scheduling.
 
 ## - Week 7:
-####  Critical Sections
+#### Critical Sections
 #### Dijstra Algorithms and the Bakery Algorithm.
 
 ## - Week 8:
