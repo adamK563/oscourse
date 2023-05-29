@@ -252,7 +252,34 @@ non-blocking is like udp just sends messeges and could care less about whats up 
 
 
 ## - Week 5:
-#### CPU bursts, I/O Burst Phases 
+#### CPU bursts, I/O Burst Phases:
+אורך חיים של תהליך יש לו:
+- חתיכה של CPU BURST
+- חתיכה של I\O BURST
+
+מתזמן רץ ומתרתו לנצל CPU בצורה מקסימלית
+CPU - I\O - burst cycle:
+ - ריצה ב CPU המתנה ל-I\O, תהליך עובר בין שני המצבים אבל נגמר ומתחיל רק ב- CPU
+ 
+CPU scheduler - מתזמן המעבד:
+בוחר תהליך ה ready queue וסם אותם במעבד
+הוא בוחר כשאר:
+1. תהליך עובר ממצב runing למצב waiting (למשל בפעולת קלט\פלט)
+2. תהליך עובר ממצב runing למצב ready (קורה במצב של פסיקה מה timer)
+3. תהליך עובר ממצב waiting למצב ready (כאשר פעולת IO הסתיימה)
+4. תהליך עובר ממצב runing למצב terminated (כלומר סיים לרוץ)
+
+עם המתזמן מעביר יכול להעביר תהליך בכל מ 4 האפשרויות אז הוא נקרה - prempative
+עם המתזמן לא מעביר את התהליך למצב ready אז הוא נקרה - non-prempative
+
+במילים פשוטו:
+preemptive - 
+- מ"ע יכולה לעצור תהליך האמצע, והוא יכול להמשיךלרוץ לבד 
+non-preemptive - 
+- מ"ע מריצה תהליך רק עם התהליך תקוע
+
+רוב המחשבים היום הם עם preemptive - רוב הסיכויים שגם זאת תהיה תשובה במבחן עם שואלים על אורך חיים של תהליך
+
 #### Scheduling Criteria
 #### Scheduling Algorithms.
 
