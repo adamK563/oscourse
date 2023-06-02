@@ -300,6 +300,18 @@ he is part of the scheduler and he does:
 
 #### Scheduling Algorithms.
 
+1. FCFS - First Come First Served - FIFO
+2. SJF - Shortest Job First
+3. Priority Scheduling -
+לכל תהליך מוקצע עדיפות INT, ככל שהמספר נמוח חותר עדיפות גבוהה יותר. עם לשני תהליכים יש עדיפות שווה אז הבחירה תתבצע לפי FCFS, אחת הבעיות שיכולות לקרות זה STARVASION שתהליך פשוט לא מקבל זמן CPU
+הפתרון ל בעיית ההרעבה - AGING - שיטה כדי להגדיל את העדיפות של תהליך ככל שזמן המתנה גדל
+4. RR - Round Robin - 
+בשיטה זאת קיים פרמטר QUANTUM - הוא אחריי להגדיר זמן עבור כל תהליך. תור ה READY - FIFO, ותהליך חדש מתבסף לסוף התור
+5. Multilevel Queue - 
+בשיטה זאת מחלקים את תור התהליכים לכמה תורים שונים וכל תור יכול לעבוד בשיטה שונה (RR, FCFS, SJF, Priority)
+7. Multilevel Feedback Queue - 
+כמו שיטת ה multilevel רק שתהליך גם יכול לעבור בין התורים 
+
 ## - Week 6:
 #### Priority,
 #### Multi-Level Scheduling
