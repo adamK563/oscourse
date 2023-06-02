@@ -280,7 +280,24 @@ non-preemptive -
 
 רוב המחשבים היום הם עם preemptive - רוב הסיכויים שגם זאת תהיה תשובה במבחן עם שואלים על אורך חיים של תהליך
 
+
+Dispecher module -  
+he is part of the scheduler and he does:
+1. Context switch
+2. Swuitches to User mode
+3. Jumps to the correct place in the code
+
+
 #### Scheduling Criteria
+קרטריונים בם משתמשים להשווה של מתזמנים:
+1. זה CPU utilization - ניצול ה- CPU
+2. תפוקה - throughput 
+3. זמן סבב - turnaround time - כמה זמן לוקח להריץ תהליך
+4. זמן המתנה waiting time - כמה זמן עובר עד שתהליך במצב ready 
+5. זמן תגובה response time 
+
+
+
 #### Scheduling Algorithms.
 
 ## - Week 6:
