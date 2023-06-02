@@ -313,26 +313,47 @@ he is part of the scheduler and he does:
 כמו שיטת ה multilevel רק שתהליך גם יכול לעבור בין התורים 
 
 ## - Week 6:
-#### Priority,
-#### Multi-Level Scheduling
-#### Distributed System Scheduling.
 
-## - Week 7:
+#### Race Condition:
+סינכרון בין תהליכים:
+1. נניח וישלנו ערך 1000 ששמור בכתובת address1 ב RAM
+2. נריץ שני אלגוריתמים שרושמים לאותה הכתובת, Proccess A and Proccess B
+3. עם נריץ תהליך A ואז B אז הערך הסופוי = 800
+4. עם נריץ תהליך B ואז A אז הערך הסופי = 900 בגלל הקוד שכתוב
+5. זה נקראב race condition שהתוצאה תלוי בסדר ההוראות
+6. אנו נרצה שהתוצאה תמיד תהיה שווה לא משנה סדר התזמונים.
+
+ה RACE CONDITION - זה מצב בא שני תהליכים מנסים לגשת או לשנות בו זמנית משאב משותף, כדי למנוע מצב כזה על התהליכים להיות מסונכרנים.
+
+
 #### Critical Sections
-#### Dijstra Algorithms and the Bakery Algorithm.
+קטע קריטי זה קטע קוד בתוכנה, 
+התוכנה מורצת על ידי כמה תהליכים, וכמה תהליכים צריצים את אותו קטע קוד,
+אני צריכים ש:
+שני תהליכים בחיים לא היו באותו קטע קוד קריטי ביחד בו זמנית
+תהליך שמגיע לקטע קוד קריטי יעלץ לחקות לתהליך שבפנים שאסיים (במידה ותפוס)
+פתרון בעית הקאע הקוד הקריטי זה אוספת קוד בכניסה ויציאה מהקטע, שעושים מעקב לכל תהליך שנכנס ויוצא
 
-## - Week 8:
+3 תנאים לפתרון העיה:
+1. Mutual exclusion - מניעה הדדית, עם יש תהליך בקטע הקריטי אף תהליך לא יכול להכנס לשם גם בכוח
+2. Progress - עם אין שום תהליך בקטע הראשון שמגיע ישר נכנס
+3. Bounded waiting - הרבה תהליכים מחכים חייבים להיות עם פרק זמן המתנה סופי כדי למנוע הרעבה
+
+#### Algorithms.
+
+## - Week :
+
 ####  Hardware based Scheduling
 #### Semaphores
 #### Classic Scheduling Problems
 #### Deadlocks.
 
-## - Week 9:
+## - Week :
 #### Addressing
 #### Memory Allocation
 #### Fragmentation.
 
-## - Week 10:
+## - Week :
 ####  Paging
 #### Segmentation
 #### Virtual Memory
@@ -340,13 +361,13 @@ he is part of the scheduler and he does:
 #### Page replacement Algorithms
 #### Thrashing.
 
-## - Week 11:
+## - Week :
 #### File Structure,
 #### File Systems
 #### Directories
 #### File Allocation.
 
-## - Week 12:
+## - Week :
 ####  Vacant Space Management
 #### Log Files
 #### File Recovering
