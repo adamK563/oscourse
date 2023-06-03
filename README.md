@@ -59,19 +59,19 @@ The kernel is a computer program at the core of a computer's operating system an
 
 תפוקה - troughput
 - Loosly coupled system - in Distributed systems a computer runs it
-מערכת מבוזרת - Distrebuted system - מערכת של כמה מחשבים 
-שיתוף משאבים
-תפוקה
-אמינות - עם מחשב אחד נופל המערכת ממשיכה לפעול
+- מערכת מבוזרת - Distrebuted system - מערכת של כמה מחשבים 
+- שיתוף משאבים
+- תפוקה
+- אמינות - עם מחשב אחד נופל המערכת ממשיכה לפעול
 
 - Real-time systems
  ### סוגים של מערכות זמן אמת:
  1. Hard real-time systems: 
  A hard real-time system has absolute deadlines, and if those allotted time spans are missed, a system failure will occur.
- example: Iron Dome (97%+ success rate)
+ - example: Iron Dome (97%+ success rate)
  
  2. Soft real-time systems, the system continues to function even if missing a deadline, but with undesirable lower quality of output.
- example: Smart fridge (We say thank if somehting smart happens)
+ - example: Smart fridge (We say thank if somehting smart happens)
 
 ## - Week 2:
 ####  Storage:
@@ -83,30 +83,30 @@ The kernel is a computer program at the core of a computer's operating system an
 4. אגרי מעבד - hardware register - תוכנות מחשב כותבות ומשתמשות בזכרון הזה כדי לתקשר עם המעבד
 
 ### HD מגנטי
-צלחות מגנטיות - מסתובבות על ציר (קומות שונות) במקביל
-משטח מגנות - צד אחד בצלחת מגנות (מלמלע ויש גם למטה)
-ראש קורא כותב - ידית שקוראת 
-סקטור - יחידה שנתן לקרוא
-טראק - אוסף של סקטורים ברדיואוס של המשטח מגנות
-צלינדר - אוסף כל הטראקס (מכל הצלחות) שבאותו הרדיאוס
+- צלחות מגנטיות - מסתובבות על ציר (קומות שונות) במקביל
+- משטח מגנות - צד אחד בצלחת מגנות (מלמלע ויש גם למטה)
+- ראש קורא כותב - ידית שקוראת 
+- סקטור - יחידה שנתן לקרוא
+- טראק - אוסף של סקטורים ברדיואוס של המשטח מגנות
+- צלינדר - אוסף כל הטראקס (מכל הצלחות) שבאותו הרדיאוס
 
 
 #### Interrupts:
 
 ## הקדמה:
-חיבור פיזי שכל התקני חומרה מחוברים אליו - BUS 
-לכל התקן חומרה יש בקר משלו (controller)
-הבקר (controller) - מקשר בין הרכיב חומרה למעבד
-קיימים שני התקני חומרה: מהיר ואיטי
-התקן חומרה איטי: מדפסת
-התקן חומרה מהיר: מסך, מקלדת, עכבר
+- חיבור פיזי שכל התקני חומרה מחוברים אליו - BUS 
+- לכל התקן חומרה יש בקר משלו (controller)
+- הבקר (controller) - מקשר בין הרכיב חומרה למעבד
+- קיימים שני התקני חומרה: מהיר ואיטי
+- התקן חומרה איטי: מדפסת
+- התקן חומרה מהיר: מסך, מקלדת, עכבר
 
 ### בקר Controller
 
-המעבד לא מדבר בצורה ישירה עם התקן חומרה
-המעבד מדבר עם הבקר כדי לקבל נתונים על הרכיב חומרה
-למעבד יש Driver לכל בקר כזה בשביל תקשורת
-לכל בקר יש buffer (זכרון קטן)
+- המעבד לא מדבר בצורה ישירה עם התקן חומרה
+- המעבד מדבר עם הבקר כדי לקבל נתונים על הרכיב חומרה
+- למעבד יש Driver לכל בקר כזה בשביל תקשורת
+- לכל בקר יש buffer (זכרון קטן)
 
 נקודות חשובות:
 - התקני קלט פלט והמעבד עובדים במקביל
@@ -115,31 +115,31 @@ The kernel is a computer program at the core of a computer's operating system an
 - בקר מעדכן את המעבד על שינוי באמצאות פסיקה
 
 ### פסיקה:
-לאחר קבל פסיקה המעבד מריץ (Interrupt service routine) ISR
+- לאחר קבל פסיקה המעבד מריץ (Interrupt service routine) ISR
 
-שה ISR זה פונקציה לטיפול פסיקות.
-פיסקה בנוי מ8 ביטים וגם כך המעבד יודע לזעות מאיזה סוג הפיסקה (לפי ה8 ביטים)
+- שה ISR זה פונקציה לטיפול פסיקות.
+- פיסקה בנוי מ8 ביטים וגם כך המעבד יודע לזעות מאיזה סוג הפיסקה (לפי ה8 ביטים)
 
-ה Interupt Vector - מכיל את כל הפסאות האפשריות שיש למערכת הפעלה בסדר לפי 8 הביטים
-הוקטור שמור בRAM המחשב, והמ"ע כותבת את התוכן של הפסיקה
+- ה Interupt Vector - מכיל את כל הפסאות האפשריות שיש למערכת הפעלה בסדר לפי 8 הביטים
+- הוקטור שמור בRAM המחשב, והמ"ע כותבת את התוכן של הפסיקה
 
-פסיקה - interrupt - סיגנל למ"ע להתיחס - שני סוגים של פסיקות:
+- פסיקה - interrupt - סיגנל למ"ע להתיחס - שני סוגים של פסיקות:
 - 1. פיסקת תוכנה - TRAP
 - 2. פסירת חומרה - פשוט INTERRUPT
 
 ### Device status tabel:
-Device-status table contains entry for each I/O device indicating its type, address, and state.
-Operating system indexes into I/O device table to determine device status and to modify table entry to include interrupt.
+- Device-status table contains entry for each I/O device indicating its type, address, and state.
+- Operating system indexes into I/O device table to determine device status and to modify table entry to include interrupt.
 
 ### DMA - Direct Memory Access
-מנגנון אשר מונע את המצב שהמעבד מחכה יוצר נדי (שכל המידע יגיע בשלמות ואז יועבר לזיכרון)
-יתרונות המנגנון:
+- מנגנון אשר מונע את המצב שהמעבד מחכה יוצר נדי (שכל המידע יגיע בשלמות ואז יועבר לזיכרון)
+- יתרונות המנגנון:
 - פחות פסיקות 
 - חיסכון בזמן מכיוון שהדרייבר לא מדבר ישירות עם הבקר אלה הבקר רושם ישר לזיכרון
-חיסרונות:
+- חיסרונות:
 - עוד רכיב חומרה פיזי (אפשר להגיד עלות)
 
-מצגת 3 צריכה להכנס פה איפשהשנו
+- מצגת 3 צריכה להכנס פה איפשהשנו
 ## - Week 3:
 #### The Process Concept
 - כל TASK או JOB נקראה תהליך PROCESS
@@ -149,10 +149,10 @@ Operating system indexes into I/O device table to determine device status and to
     - דאטה סקשון - data section - משתנים גלבלים של התהליך
     - סטאק סקשן - stack section - משתנים מקומיים של התהליך
 ### יצירת תהליך:
-כל תהליך נוצר מתהליך אחר כלומר תהליך אב (תהליך הראשון נוצר ע"י מ"ע)
-קיים מושג עץ תהליכים
-תהליך אב לא יכול להשתחרר לפני שתהליכי בנאב ישוחרורו
-מבחינת חשיפה יש שלושה מקרים:
+- כל תהליך נוצר מתהליך אחר כלומר תהליך אב (תהליך הראשון נוצר ע"י מ"ע)
+- קיים מושג עץ תהליכים
+- תהליך אב לא יכול להשתחרר לפני שתהליכי בנאב ישוחרורו
+- מבחינת חשיפה יש שלושה מקרים:
 1. בן יכול לרשת את כל המשאבים של האב
 2. בן יכול לרשת חלק מהמשאבים של האב
 3. בן יכול לא לרשת משאבים כלל
