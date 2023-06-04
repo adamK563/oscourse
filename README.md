@@ -382,7 +382,24 @@ he is part of the scheduler and he does:
 - זאת היא תוכנה של המ"ע שמאפשר למ"ע לטפל בבעית הקטע הקריטי
 - המ"ע מבצאת שימוש ב test and set ו- ב swap
 
-#### Classic Scheduling Problems
+#### שני סוגים של סמפורים:
+1. ה counting semaphore - הערך שלו יכול להיות כל מספר שלם
+2. ה binary semaphore - אפסים ואחדים (קל למימוש ויותר יעיל) 
+
+
+
+
+#### Classic Scheduling Problems:
+## שמות הבעיות התזמון הקלאסיות:
+1. בעיית ה Bounded-Buffer - יצרן צרחן
+2. בעיית ה Readers-Writers - קוראים כותבים
+3. בעיית ה Dining-Philosophers - הפילוסופרים הסועדים
+
+
+### Bounded Buffer Problem:
+- בעיית היצרן צרכן - פותר semaphore.
+- ישנם 3 semaphores 
+- 2 תהליכים - יצרן Producer ו- צרכן Consumer
 #### Deadlocks.
 
 ## - Week :
