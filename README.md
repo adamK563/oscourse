@@ -400,6 +400,18 @@ he is part of the scheduler and he does:
 - בעיית היצרן צרכן - פותר semaphore.
 - ישנם 3 semaphores 
 - 2 תהליכים - יצרן Producer ו- צרכן Consumer
+- The producer stores data in the buffer(array) 
+- The consumer removes data from the buffer
+- The produce and consumer should not insert and remove data simultaneously
+
+- Three semaphores:
+1. mutex - binary semaphore 
+2. empty - a counting semaphore - initual value is the number of slots in the buffer, since all slots are initially empty
+3. full - a counting semaphore - initual value is 0
+
+
+
+
 #### Deadlocks.
 
 ## - Week :
