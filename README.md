@@ -461,6 +461,15 @@ he is part of the scheduler and he does:
  - ps (process status) – מראה רשימה של התהליכים במערכת ובאיזה מצב הם. Ps עובד עם דגלים.
  - df- Disk Free.
  - Top – כמו ps.
+___________
+- 2^10 = 1KB
+- 2^20 = 1MB
+- 2^30 = 1GB
+- 2^40 = 1TB
+- 2^50 = 1PB
+- 2^60 = 1EB
+
+
 
 ## Contributing
 
